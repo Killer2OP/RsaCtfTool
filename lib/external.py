@@ -8,11 +8,6 @@ YAFU_BIN = os.environ.get("YAFU_BIN", "NONE")
 CADO_BIN = os.environ.get("CADO_BIN", "NONE")
 NECA_BIN = os.environ.get("NECA_BIN", "NONE")
 
-
-def ifferm(fname):
-    os.system("if [ -f '%s' ];  then rm '%s'; fi" % (fname, fname))
-
-
 def msieve_factor_driver(n):
     global MSIEVE_BIN
     print("[*] Factoring %d with msieve..." % n)
