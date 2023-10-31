@@ -1,11 +1,16 @@
 name: lint_python
 on: [push, pull_request]
 jobs:
-  lint_python:
+ lint_python:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-python@v2
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16
+    - name: Set up Python
+      uses: actions/setup-python@v2
     - name: Lint with flake8
       run: |
         pip install flake8
